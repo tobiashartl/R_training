@@ -789,7 +789,7 @@ if ( expr ) {
 ```
 
 - A simple example:
-```{r ifelse_example, eval = FALSE}
+```{r ifelse_example}
 x <- 5
 if (x > 0) {
   y <- 1       ## if x is positive, y should get value 1
@@ -824,18 +824,17 @@ if (all(y > 4) ) {        ## all() is "TRUE" if the argument is a vector of all 
 ## Conditional Execution with Multipe Options
 
 - There may be more than two cases to consider, for example:
-$$f(x) = \cases{0 \text{ for  } x \leq 5\\
+$$y = \cases{0 \text{ for  } x \leq 5\\
                 4 \text{ for  } 0< x \leq 5\\
                 6 \text{ otherwise.}}$$
+
 ```{r ifelse_more, eval = FALSE}
-stepfunction <- function(x){
-  if ( x <= 0 ) {
-      0
-  } else if (x <= 5 ) {
-      4
-  } else {
-      6
-  }
+if ( x <= 0 ) {
+  y <- 0
+} else if (x <= 5 ) {
+  y <- 4
+} else {
+  y <- 6
 }
 ```
 
@@ -882,7 +881,7 @@ Frequently, small code blocks need to be executed multiple times. Loops help wit
 
 - Some examples
 ```{r example_loops}
-vec <- c("One","Two","Three")
+vec <- c("One", "Two", "Three")
 for (v in vec) {
 	print(v)
 }
@@ -919,7 +918,7 @@ for (i in 1:n_col) {        # loop over all columns
 
 - If the first value in the vector is missing, it should get the value of the second element. If the last value is missing, it should get the value of the preceding element.
 
-- To keep things simple, we assume that there are never two consecutive missing values, search that only the rules are both have to be programmed.
+- To keep things simple, we assume that there are never two consecutive missing values, such that only the rules above have to be programmed.
 
 - Although there are many ways to create such a function, we focus on using a `for` loop and `if` statements.
 
