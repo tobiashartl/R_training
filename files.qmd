@@ -45,7 +45,7 @@ No solutions
 - [Solutions Session 2](solutions/S2.R)
 
 #### Session 3
-To follow
+- [Solutions Session 3](solutions/S3.R)
 
 #### Session 4
 To follow
