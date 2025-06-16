@@ -206,6 +206,31 @@ import("data/climate_wide.dta")
 import("data/climate.csv")
 ```
 
+## Loading data from APIs
+ - It is possible to automatically load data from a web source using APIs.
+ - An API (Application Programming Interface) acts as a bridge between your R code and an external data source: a website, database, or an online platform with permissions.
+ - Advantages: Automation, efficiency and real-time access.
+ - Disadvantages: No offline access to data (can be important for replication), dependency on external services (API can go down).
+ - Suggestion: Save the downloaded data in Rdata format to mitigate disadvantages.
+
+## Example: AAPL daily prices from Yahoo Finance
+- As an example we will download AAPL daily prices from Yahoo Finance.
+- Convert loaded data to a vector.
+- Save the data as an Rdata file for future offline access.
+```{r}
+library(quantmod)
+# Get Apple Inc. (AAPL) stock data from Yahoo Finance
+getSymbols("AAPL", src = "yahoo", from = "2024-01-01", to = Sys.Date())
+# Save data as Rdata file
+save.image("AAPL.Rdata")
+```
+## Example: AAPL daily prices from Yahoo Finance (cont'd)
+- View and plot data.
+```{r}
+# View the first few rows
+AAPL[1:4,]
+```
+
 ## Outputs
 
 - Outputs work very similarly to the inputs above.
@@ -218,10 +243,7 @@ import("data/climate.csv")
 - Save your current workspace using function `save.image()`.
 - Save only one variable in the workspace using function `save()`.
 - Make a list of two variables from `long_data`, and save this list using function `save`.
-<!-- save.image('myoutput.Rdata') -->
-<!-- save(climate, 'myclimatedata.Rdata') -->
-<!-- myoutput <- list(data_short$NAME, data_short$LATITUTE) -->
-<!-- save(myoutput, 'myclimatedata.Rdata') -->
+<!-- see solution file -->
 
 ## R Base Graphics
 
@@ -237,6 +259,10 @@ To create plots with R's standard `graphics` package, there are *high-level* and
 
 ```{r}
 plot(long_data$TEMP)     ## Plotting a single variable
+```
+## Simple plots
+
+```{r}
 plot(x = long_data$MONTH, y = long_data$TEMP)     ## Scatter plot wrt month
 ```
 
@@ -253,14 +279,21 @@ Notice that function `plot()` calls methods.
 
 It will perform different operations depending on the class of the passed object. (We study the `lm()` function in detail in the next session!)
 
-```{r}
+```{r, eval=FALSE}
 ols_result <- lm(TEMP~MONTH, data = long_data)
 plot(ols_result)
 ```
+## Exercise 4.2: Load data from Yahoo Finance, and see how plot function behaves.
+- Plot the whole dataset
+- Plot a selected column, for example closing prices `AAPL$AAPL.Close`
+- Comment on the x axis of the data and how it is different from the plots we considered earlier.
+- The difference is due to the quantmod package.
+<!-- See solution file -->
 
 ## Creating and saving a graph
 
 ```{r, eval=FALSE}
+load("data/climate_wide.Rdata")
 pdf("figures/plot_data_short.pdf")
 hist(wide_data$MAASTRICHT, breaks = 20)
 dev.off()
@@ -271,6 +304,7 @@ dev.off()
 - Function `dev.off()'is called after all the plotting, to save the file and return control to the screen.
 
 ```{r}
+load("data/climate_wide.Rdata")
 plot(wide_data$MAASTRICHT) # temperatures in Maastricht
 lines(wide_data$EINDHOVEN) # temperatures in Eindhoven in lines
 ```
@@ -300,9 +334,9 @@ lines(wide_data$EINDHOVEN) # temperatures in Eindhoven in lines
  - `text`: Add text at $(x,y)$ coordinates
  - `mtext`: Add text with positional specification like `side=1,...,4`
 
-## Exercise 4.2: Plot maximum temperatures for Maastricht
+## Exercise 4.3: Plot temperatures for Maastricht
 
-We want to visualize the daily maximum temperatures in the climate data specifically for Maastricht. First, make a basic plot of temperatures in Maastricht then customise the plot in the following ways:
+We want to visualize the daily temperatures in the climate data specifically for Maastricht. First, make a basic plot of temperatures in Maastricht then customise the plot in the following ways:
 
 1. The title of the X-axis should say 'Month', the title of the Y-axis 'Average Temperature'.
 
@@ -316,19 +350,14 @@ We want to visualize the daily maximum temperatures in the climate data specific
 
 You will need to consult the help file for this exercise; see this therefrom more as an exercise in how to navigate R's help system, than an exercise in plotting (which we will cover in more detail later).
 
-You may want to ask ChatGPT for help and then try to see if you could also have gotten the same answer yourself; it may not always give you the most straightforward answer though!
+You may want to ask ChatGPT for help.
 
-<!-- ind <- data_short[,3] == "MAASTRICHT" -->
-<!-- data_Maas <- data_short[ind,]  -->
-<!-- plot(data_Maas$MAX, type = 'l', col = 'blue', tck = 0.05) -->
-<!-- mean_max <- mean(data_Maas$MAX) -->
-<!-- abline(h = mean_max) -->
+<!-- See solution file -->
 
 ## Manually saving R plots
 
  - Use the plot functions without creating a graph.
  - Use the `plots' area to save image manually.
-
 
 ## Different plot types
 
@@ -345,27 +374,35 @@ jpeg("figures/MaasTemperature.jpeg")
 plot(x = wide_data$MAASTICHT, y = wide_data$MONTH)
 dev.off()
 ```
+## A more complex example for plotting data over time gradually
+- Especially when data is large, a gradual illustration of data over time can be handy.
+- In this exercise, we plot the temperatures in Maastricht as if the data are becoming available gradually.
+- For this, we will use a `loop` that iterates over time points (months).
+- The concept of a loop was only mentioned in Session 2.
 
-<!-- THEY HAVE PROBABLY NOT SEEN LOOPS!!! -->
-<!-- ## Exercise 4.4: Make a continuous plot of maximum temperatures in Maastricht -->
+```{r, eval = FALSE}
+load("data/climate_wide.Rdata")
+# Start with an initial number of 3 observations
+plot(1:3, wide_data$MAASTRICHT[1:3],
+     xlab = "Time", ylab = "Value", main = "Adding Data Over Time", type = 'l')
 
-<!-- - In this exercise we want to visualise the data over time as if data are gradually becoming available. -->
-<!-- - Select a starting sample of the data for Maastricht.  -->
-<!-- - Make a for loop to get increasing windows of the data. -->
-<!-- - Expand your plot with new data within the for loop. -->
+# Gradually plot more and more of the data using a `for loop`
+for (i in 4:nrow(wide_data)) {
+  plot(1:i, wide_data$MAASTRICHT[1:i], # notice index i is increasing the number of plotted points
+     xlab = "Time", ylab = "Value", main = "Adding Data Over Time", type = 'l')
+}
+```
+Exercise 4.4 Make a continuous plot of temperatures
+- Use the last loop example to plot temperatures gradually.
+- Start with an initial number of 3 observations, as in the example.
+- Make sure that the range of the x and y axes match with the whole dataset in the first plot.
+- Within the for loop, add lines to the first plot, instead of plotting the data again.
+- Pause the program within the for loop to simulate "gradual" effect.
+- You can use ChatGBT or help functions for `?ylim`, `?Sys.sleep`
 
-<!-- # Create plot window -->
-<!-- plot(1:1000, data_Maas$MAX[1:100], xlim = c(1, nrow(data_Maas)), ylim = range(data_Maas$MAX),
-     xlab = "Time", ylab = "Value", main = "Adding Data Over Time", type = 'l') -->
-<!-- # Gradually add points -->
-<!-- ind <- data_short[,3] == "MAASTRICHT" -->
-<!-- data_Maas <- data_short[ind,]  -->
-<!-- for (i in 1001:nrow(data_Maas)) { -->
-<!--   lines(1:i, data_Maas$MAX[1:i], col = "steelblue") -->
-<!--   Sys.sleep(0.05)  # Pause to simulate "gradual" effect -->
-<!-- } -->
+<!-- See solution file -->
 
-# Bonus: Advanved Graphics using ggplot
+# Bonus: Advanced Graphics using ggplot
 
 ## Exercise 4.3: Use other packages for plots
 
