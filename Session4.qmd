@@ -217,7 +217,7 @@ import("data/climate.csv")
 - As an example we will download AAPL daily prices from Yahoo Finance.
 - Convert loaded data to a vector.
 - Save the data as an Rdata file for future offline access.
-```{r}
+```{r, eval=FALSE}
 library(quantmod)
 # Get Apple Inc. (AAPL) stock data from Yahoo Finance
 getSymbols("AAPL", src = "yahoo", from = "2024-01-01", to = Sys.Date())
