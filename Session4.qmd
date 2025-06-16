@@ -381,9 +381,7 @@ dev.off()
 - The concept of a loop was only mentioned in Session 2.
 
 ```{r, eval = FALSE}
-load("data/climate_wide.Rdata")
-# Start with an initial number of 3 observations
-plot(1:3, wide_data$MAASTRICHT[1:3],
+wide_data$MAASTRICHT
      xlab = "Time", ylab = "Value", main = "Adding Data Over Time", type = 'l')
 
 # Gradually plot more and more of the data using a `for loop`
@@ -404,24 +402,54 @@ Exercise 4.4 Make a continuous plot of temperatures
 
 # Bonus: Advanced Graphics using ggplot
 
-## Exercise 4.3: Use other packages for plots
+- R has several advanced graphics packages such as `ggplot2` (see [book](https://ggplot2-book.org/) by Hadley Wickham), `plotly`, `Rgnuplot`,...
+- We will focus on ggplot2 as this is widely used.
+- The ggplot2 package in R enables to build complex plots from data in a structured and layered manner.
+- The plot is based on a specified data frame, aesthetic mappings (like x and y axes), and layers such as points, lines, or bars (geom_* functions).
+- Advantages: flexibile, consistent syntax, and fancy graphics.
+- Disadvantages: Very different syntax e.g. compared to functions.
 
-- Make the same plot in R using package `ggplot2'
-- You may want to use ChatGBT since the syntax of `ggplot2' is quite different from what we covered so far.
+## Typical ggplot help function sections
+- Section	What it Gives You
+- Title	Short description
+- Description	What the function does
+- Usage	The function’s syntax
+- Arguments	What each argument means
+- Details	Extra explanation and special behavior
+- Aesthetics	Visual mappings (like x, y, color, etc.)
+- Examples	Example code to learn from
 
-<!-- library(ggplot2) -->
-<!-- ind <- data_short[,3] == "MAASTRICHT" -->
-<!-- data_Maas <- data_short[ind,]  -->
-<!-- # Add an index to identify each observation -->
-<!-- data_Maas$index <- 1:nrow(data_Maas) -->
-<!-- mean_max <- mean(data_Maas$MAX) -->
-<!-- # Line plot: index vs. mpg -->
-<!-- ggplot(data_Maas, aes(x = index, y = MAX)) + -->
-<!--   geom_line(color = "steelblue", size = 1) + -->
-<!--   geom_point(color = "steelblue") + -->
-<!--   geom_hline(yintercept = mean_max, color = "red", linetype = "dashed", size = 1)  -->
-<!--   labs(title = "Max temp. in Maastricht", -->
-<!--        x = "Observation Index", -->
-<!--        y = "Max temperature")  -->
+```{r}
+?ggplot2:geom_lines
+```
+
+## Example: Scatterplot of temperatures in Maastricht
+- We will make a similar plot to exercise 4.3 a scatterplot of temperatures in Maastricht
+- Notice the syntax difference in parentheses and use of `+` for layers
+
+```{r}
+library('ggplot2')
+# load data
+load("data/climate_wide.Rdata")
+# create data frame
+wide_data$index <- 1:nrow(wide_data)
+# simple scatter (line) plot
+ggplot(wide_data, aes(x = index, y = MAASTRICHT)) +
+  geom_line(color = "steelblue", size = 1) # adds lines
+```
+## Example ggplot (cont'd)
+-  Help files of ggplot2 are also slightly different from the standard R help files
+
+```{r}
+?ggplot # a bit complicated help file
+help(package = "ggplot2") # a nicer list of all layer functions, see 'geom_line'
+```
+## Exercise 4.5: Use other packages for plots
+
+- Make the same plot as in Exercise 4.3 using package `ggplot2'
+- Use help functions for `geom_point`, `geom_hline`, `labs`.
+- You can give it a try to use ChatGBT, but the outcome is difficult to understand if you don't have familiarity with ggplot to begin with.
+
+<!-- see solution file -->
 
 
