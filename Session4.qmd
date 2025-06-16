@@ -133,7 +133,7 @@ R interacts with files in several ways.
 ## Example data: average temperatures for Maastricht and Eindhoven during 2024, every 2nd day of the month
 
 ```{r}
-load("data/climate_long.RData")
+load("data/climate_long.Rdata")
 print(long_data)
 ```
 ## Notice the data are loaded as a dataframe:
@@ -144,7 +144,7 @@ typeof(long_data)
 
 ## There is a distinction between a long and wide dataframe:
 ```{r}
-load("data/climate_wide.RData")
+load("data/climate_wide.Rdata")
 print(wide_data)
 ```
 
@@ -298,7 +298,7 @@ plot(ols_result)
 ## Creating and saving a graph
 
 ```{r, eval=FALSE}
-load("data/climate_wide.RData")
+load("data/climate_wide.Rdata")
 pdf("figures/plot_data_short.pdf")
 hist(wide_data$MAASTRICHT, breaks = 20)
 dev.off()
@@ -309,7 +309,7 @@ dev.off()
 - Function `dev.off()'is called after all the plotting, to save the file and return control to the screen.
 
 ```{r}
-load("data/climate_wide.RData")
+load("data/climate_wide.Rdata")
 plot(wide_data$MAASTRICHT) # temperatures in Maastricht
 lines(wide_data$EINDHOVEN) # temperatures in Eindhoven in lines
 ```
@@ -411,7 +411,7 @@ Exercise 4.4 Make a continuous plot of temperatures
 - We will focus on ggplot2 as this is widely used.
 - The ggplot2 package in R enables to build complex plots from data in a structured and layered manner.
 - The plot is based on a specified data frame, aesthetic mappings (like x and y axes), and layers such as points, lines, or bars (geom_* functions).
-- Advantages: flexibile, consistent syntax, and fancy graphics.
+- Advantages: flexible, consistent syntax, and fancy graphics.
 - Disadvantages: Very different syntax e.g. compared to functions.
 
 ## Typical ggplot help function sections
@@ -427,20 +427,54 @@ Exercise 4.4 Make a continuous plot of temperatures
 ```{r, eval=FALSE}
 ?ggplot2::geom_line
 ```
+## Using ggplot: Grammar of graphics
+- Graphics with ggplot2 are built step-by-step, adding new elements as layers
+- A plot starts with the function ggplot(). This is the main object we will add layers to.
+- Each layer is added with a plus sign (+) between layers. This allows for extensive flexibility and customization of plots.
+- Three components need to be specified for the plot:
+  - data: data to feed in
+  - aesthetics: how you will connect variables (columns) from your data to a visual dimension. Horizontal positioning, size, color etc.
+  - geometries: This is a specification of what object will actually be drawn on the plot. This could be a point, a line, a bar, etc.
+
+## Using ggplot: Grammar of graphics (cont'd)
+- Several optional additional layers customize the graphics and help make flexible graphs.
+  - Scales: How a variable is mapped to its aesthetic. Can be linear, in log scale etc.
+  - Statistical transformations: Specification of whether and how the data are combined/transformed before being plotted.
+  - Coordinate system: Specification of how the position aesthetics (x and y) are depicted, for example cartesian or polar coordinates.
+  - Facet: This is a specification of data variables that partition the data into smaller “sub plots”, or panels.
+
+## Example: Histogram of temperatures in Maastricht
+- Notice the syntax difference in parentheses and use of `+` for layers
+- Notice the data `wide_data` is a data frame with an index
+```{r}
+library('ggplot2')
+load("data/climate_wide.Rdata") # load data
+wide_data$index <- 1:nrow(wide_data) # create data frame
+ggplot(wide_data, aes(x = MAASTRICHT)) +
+  geom_histogram(baddwidth = 200)
+```
 
 ## Example: Plot of temperatures in Maastricht
 - We will make a similar plot to exercise 4.3: a plot of temperatures in Maastricht
 - Notice the syntax difference in parentheses and use of `+` for layers
+- Notice the data `wide_data` is a data frame with an index
+- Aesthetics are defined, size, color.
+- Geometrics is defined by the function `geom_line` (line plot)
 
 ```{r}
-library('ggplot2')
-# load data
-load("data/climate_wide.RData")
-# create data frame
-wide_data$index <- 1:nrow(wide_data)
-# simple scatter (line) plot
+load("data/climate_wide.Rdata") # load data
+wide_data$index <- 1:nrow(wide_data) # create data frame
 ggplot(wide_data, aes(x = index, y = MAASTRICHT)) +
-  geom_line(color = "steelblue", size = 1) # adds lines
+  geom_line(color = "steelblue", size = 1) # adds lines # simple scatter (line) plot
+```
+## Example: Adding additional geometrics and aesthetics
+- Adding layers, such as a new set of points is simple:
+```{r}
+load("data/climate_wide.Rdata") # load data
+wide_data$index <- 1:nrow(wide_data) # create data frame
+ggplot(wide_data, aes(x = index, y = MAASTRICHT)) +
+  geom_line(color = "steelblue", size = 1) +
+  geom_line(aes(x = index, y = EINDHOVEN, color = "red", size = 0.3)) # Adds Eindhoven data to the last plot
 ```
 ## Example ggplot (cont'd)
 -  Help files of ggplot2 are also slightly different from the standard R help files
@@ -449,9 +483,24 @@ ggplot(wide_data, aes(x = index, y = MAASTRICHT)) +
 ?ggplot # a bit complicated help file
 help(package = "ggplot2") # a nicer list of all layer functions, see 'geom_line'
 ```
-## Exercise 4.5: Use other packages for plots
+## Example ggplot: Color points for Maastricht and Eindhoven temperatures
+- For this example, we will use the long dataframe since we will plot values for both cities.
+- This is a more complex graph where aesthetics defined in geometrics create point colors according to a variable in the data frame.
+```{r}
+library('ggplot2')
+load("data/climate_long.Rdata") # load data
+long_data$index <- 1:nrow(long_data) # create data frame
+ggplot(data = long_data) +
+  geom_point(aes(x = index, y = TEMP, color = NAME))
+```
+## Further references for ggplot2
+[R for data science](https://nt246.github.io/NTRES-6100-data-science/lesson6-ggplot-part1.html#Preparing_to_create_our_first_ggplot2_graph)
+[Collaborative and Reproducible Data Science in R](https://nt246.github.io/NTRES-6100-data-science/lesson6-ggplot-part1.html#Preparing_to_create_our_first_ggplot2_graph)
+
+## Exercise 4.5: Use ggplot2 for more flexible and advanced plots
 
 - Make the same plot as in Exercise 4.3 using package `ggplot2'
+- We suggest to use the wide data
 - Use help functions for `geom_point`, `geom_hline`, `labs`.
 - You can give it a try to use ChatGBT, but the outcome is difficult to understand if you don't have familiarity with ggplot to begin with.
 
