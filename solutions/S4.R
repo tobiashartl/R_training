@@ -20,20 +20,17 @@ mean_max <- mean(wide_data$MAASTRICHT)
 abline(h = mean_max)
 
 # Solution to 4.4
+library(ggplot2) 
 load("data/climate_wide.Rdata")
-# Start with an initial number of observations
-# Make sure that the range of the x and y axes match with the whole dataset
-plot(1:3, wide_data$MAASTRICHT[1:3],
-     xlim = c(1, nrow(wide_data)), ylim = range(wide_data$MAASTRICHT),
-     xlab = "Time", ylab = "Value", main = "Adding Data Over Time", type = 'l') 
-# Gradually extend the line
-# Within the for loop, add lines to the first plot, instead of plotting the data again.
-for (i in 4:nrow(wide_data)) { 
-  lines(1:i, wide_data$MAASTRICHT[1:i])  
-  Sys.sleep(0.15)  # Pause to simulate "gradual" effect 
-} 
-
-
+mean_max <- mean(wide_data$MAASTRICHT)
+wide_data$index <- 1:nrow(wide_data)
+ggplot(wide_data, aes(x = index, y = MAASTRICHT)) + 
+geom_line(color = "steelblue", size = 1) +
+geom_point(color = "steelblue") +
+geom_hline(yintercept = mean_max, color = "red", linetype = "dashed", size = 1) 
+labs(title = "Max temp. in Maastricht",
+     x = "Observation Index",
+     y = "Max temperature") 
 
 
 
