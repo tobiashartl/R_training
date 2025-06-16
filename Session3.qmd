@@ -824,7 +824,7 @@ if (all(y > 4) ) {        ## all() is "TRUE" if the argument is a vector of all 
 ## Conditional Execution with Multipe Options
 
 - There may be more than two cases to consider, for example:
-$$y = \cases{0 \text{ for  } x \leq 5\\
+$$y = \cases{0 \text{ for  } x \leq 0\\
                 4 \text{ for  } 0< x \leq 5\\
                 6 \text{ otherwise.}}$$
 
