@@ -443,6 +443,13 @@ Exercise 4.4 Make a continuous plot of temperatures
   - Coordinate system: Specification of how the position aesthetics (x and y) are depicted, for example cartesian or polar coordinates.
   - Facet: This is a specification of data variables that partition the data into smaller “sub plots”, or panels.
 
+## Example ggplot (cont'd)
+-  Help files of ggplot2 are also slightly different from the standard R help files
+
+```{r, eval=FALSE}
+?ggplot # a bit complicated help file
+help(package = "ggplot2") # a nicer list of all layer functions, see 'geom_line'
+```
 ## Example: Histogram of temperatures in Maastricht
 - Notice the syntax difference in parentheses and use of `+` for layers
 - Notice the data `wide_data` is a data frame with an index
@@ -451,21 +458,29 @@ library('ggplot2')
 load("data/climate_wide.Rdata") # load data
 wide_data$index <- 1:nrow(wide_data) # create data frame
 ggplot(wide_data, aes(x = MAASTRICHT)) +
-  geom_histogram(baddwidth = 200)
+  geom_histogram(bandwidth = 200)
 ```
 
 ## Example: Plot of temperatures in Maastricht
 - We will make a similar plot to exercise 4.3: a plot of temperatures in Maastricht
-- Notice the syntax difference in parentheses and use of `+` for layers
-- Notice the data `wide_data` is a data frame with an index
-- Aesthetics are defined, size, color.
+- Aesthetics are defined with line width, color.
 - Geometrics is defined by the function `geom_line` (line plot)
 
 ```{r}
 load("data/climate_wide.Rdata") # load data
 wide_data$index <- 1:nrow(wide_data) # create data frame
 ggplot(wide_data, aes(x = index, y = MAASTRICHT)) +
-  geom_line(color = "steelblue", size = 1) # adds lines # simple scatter (line) plot
+  geom_line(color = "blue", linewidth = 1) # adds lines #
+```
+## Example: Possible confusion with `aesthetics`
+- A point that is easy to make a mistake: mapping variables in aesthetics.
+- See `color` is defined in `aes` below compared to the earlier slide.
+- Check the weird legend that appears in the plot, and the line is still red.
+```{r}
+load("data/climate_wide.Rdata") # load data
+wide_data$index <- 1:nrow(wide_data) # create data frame
+ggplot(wide_data, aes(x = index, y = MAASTRICHT, color = "blue")) +
+  geom_line(linewidth = 1) # adds lines #
 ```
 ## Example: Adding additional geometrics and aesthetics
 - Adding layers, such as a new set of points is simple:
@@ -473,16 +488,24 @@ ggplot(wide_data, aes(x = index, y = MAASTRICHT)) +
 load("data/climate_wide.Rdata") # load data
 wide_data$index <- 1:nrow(wide_data) # create data frame
 ggplot(wide_data, aes(x = index, y = MAASTRICHT)) +
-  geom_line(color = "steelblue", size = 1) +
-  geom_line(aes(x = index, y = EINDHOVEN, color = "red", size = 0.3)) # Adds Eindhoven data to the last plot
+  geom_line(color = "blue", size = 1, linewidth = 2) +
+  geom_line(aes(x = index, y = EINDHOVEN), linewidth = 0.3) # Adds Eindhoven data to the last plot
 ```
-## Example ggplot (cont'd)
--  Help files of ggplot2 are also slightly different from the standard R help files
+## Example: Adding more layers
+```{r}
+load("data/climate_wide.Rdata") # load data
+wide_data$index <- 1:nrow(wide_data) # create data frame
+ggplot(wide_data, aes(x = index, y = MAASTRICHT)) +
+  geom_line(color = "blue", size = 1, linewidth = 2) +
+  geom_line(aes(x = index, y = EINDHOVEN), linewidth = 0.3) # Adds Eindhoven data to the last plot
+  labs(
+    x = "X Axis", y = "Y Axis", color = "Legend Title",   # Axis labels and legend title
+    title = "Line Plot with Two Variables"
+  ) +
+  scale_color_manual(values = c("blue", "red")) +  # Custom colors
+  theme_minimal()  # Minimal theme for a clean look
+```
 
-```{r, eval=FALSE}
-?ggplot # a bit complicated help file
-help(package = "ggplot2") # a nicer list of all layer functions, see 'geom_line'
-```
 ## Example ggplot: Color points for Maastricht and Eindhoven temperatures
 - For this example, we will use the long dataframe since we will plot values for both cities.
 - This is a more complex graph where aesthetics defined in geometrics create point colors according to a variable in the data frame.
@@ -495,6 +518,7 @@ ggplot(data = long_data) +
 ```
 ## Further references for ggplot2
 [R for data science](https://nt246.github.io/NTRES-6100-data-science/lesson6-ggplot-part1.html#Preparing_to_create_our_first_ggplot2_graph)
+
 [Collaborative and Reproducible Data Science in R](https://nt246.github.io/NTRES-6100-data-science/lesson6-ggplot-part1.html#Preparing_to_create_our_first_ggplot2_graph)
 
 ## Exercise 4.5: Use ggplot2 for more flexible and advanced plots
