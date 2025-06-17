@@ -353,7 +353,7 @@ We want to visualize the daily temperatures in the climate data specifically for
 
 5. Add a horizontal line with the average maximum temperature
 
-You will need to consult the help file for this exercise; see this therefrom more as an exercise in how to navigate R's help system, than an exercise in plotting (which we will cover in more detail later).
+You will need to consult the help file for this exercise; see this therefore more as an exercise in how to navigate R's help system, than an exercise in plotting (which we will cover in more detail later).
 
 You may want to ask ChatGPT for help.
 
@@ -460,22 +460,22 @@ wide_data$index <- 1:nrow(wide_data) # create data frame
 ggplot(wide_data, aes(x = MAASTRICHT)) +
   geom_histogram(bandwidth = 200)
 ```
-
 ## Example: Plot of temperatures in Maastricht
 - We will make a similar plot to exercise 4.3: a plot of temperatures in Maastricht
 - Aesthetics are defined with line width, color.
 - Geometrics is defined by the function `geom_line` (line plot)
-
 ```{r}
 load("data/climate_wide.Rdata") # load data
 wide_data$index <- 1:nrow(wide_data) # create data frame
 ggplot(wide_data, aes(x = index, y = MAASTRICHT)) +
   geom_line(color = "blue", linewidth = 1) # adds lines #
 ```
-## Example: Possible confusion with `aesthetics`
+## Example: Possible confusion with aesthetics
 - A point that is easy to make a mistake: mapping variables in aesthetics.
 - See `color` is defined in `aes` below compared to the earlier slide.
 - Check the weird legend that appears in the plot, and the line is still red.
+- See the help file for `ggplot2::geom_line`.
+- There is a lot of information in the help file as a result of flexibility, but the proper use is explained.
 ```{r}
 load("data/climate_wide.Rdata") # load data
 wide_data$index <- 1:nrow(wide_data) # create data frame
@@ -492,12 +492,13 @@ ggplot(wide_data, aes(x = index, y = MAASTRICHT)) +
   geom_line(aes(x = index, y = EINDHOVEN), linewidth = 0.3) # Adds Eindhoven data to the last plot
 ```
 ## Example: Adding more layers
+- Adding more layers for labels and legends
 ```{r}
 load("data/climate_wide.Rdata") # load data
 wide_data$index <- 1:nrow(wide_data) # create data frame
 ggplot(wide_data, aes(x = index, y = MAASTRICHT)) +
   geom_line(color = "blue", size = 1, linewidth = 2) +
-  geom_line(aes(x = index, y = EINDHOVEN), linewidth = 0.3) # Adds Eindhoven data to the last plot
+  geom_line(aes(x = index, y = EINDHOVEN), linewidth = 0.3) + # Adds Eindhoven data to the last plot
   labs(
     x = "X Axis", y = "Y Axis", color = "Legend Title",   # Axis labels and legend title
     title = "Line Plot with Two Variables"
@@ -505,7 +506,6 @@ ggplot(wide_data, aes(x = index, y = MAASTRICHT)) +
   scale_color_manual(values = c("blue", "red")) +  # Custom colors
   theme_minimal()  # Minimal theme for a clean look
 ```
-
 ## Example ggplot: Color points for Maastricht and Eindhoven temperatures
 - For this example, we will use the long dataframe since we will plot values for both cities.
 - This is a more complex graph where aesthetics defined in geometrics create point colors according to a variable in the data frame.
