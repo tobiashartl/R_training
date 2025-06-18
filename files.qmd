@@ -30,7 +30,12 @@ No datasets used
 - [courses.RData](data/courses.RData)
 
 #### Session 4
-To follow
+- [climate_long.Rdata](data/climate_long.Rdata)
+- [climate_wide.Rdata](data/climate_wide.Rdata)
+- [climate_wide.xlsx](data/climate_wide.xlsx)
+- [climate_wide.dta](data/climate_wide.dta)
+- [climate.csv](data/climate.csv)
+
 
 #### Session 5
 To follow
@@ -39,7 +44,7 @@ To follow
 Here we post solutions to the exercises in the sessions. The files are eventually kept very basic, only having the necessary code. The files, therefore, have very little meaning on their own, but might be useful to consult during the sessions.
 
 #### Session 1
-No solutions
+- No solutions
 
 #### Session 2
 - [Solutions Session 2](solutions/S2.R)
@@ -48,7 +53,7 @@ No solutions
 - [Solutions Session 3](solutions/S3.R)
 
 #### Session 4
-To follow
+- [Solutions Session 4](solutions/S4.R)
 
 #### Session 5
 To follow
