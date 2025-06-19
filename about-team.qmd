@@ -33,7 +33,7 @@ All are econometricians at the Department of Quantitative Economics, and have ma
 
 ::: {.column width="60%"}
 - Associate Professor at QE
-- Research interests: econometrics, Bayesian statisics, financial econometrics
+- Research interests: econometrics, Bayesian statistics, financial econometrics
 - [Website](https://www.maastrichtuniversity.nl/n-bast%C3%BCrk)
 :::
 
@@ -84,7 +84,7 @@ All are econometricians at the Department of Quantitative Economics, and have ma
 
 ::: {.column width="60%"}
 - Professor of Econometrics at QE
-- Research interests: econometrics, time series, high-dimensional statisics, bootstrap, macro- and climate econometrics 
+- Research interests: econometrics, time series, high-dimensional statistics, bootstrap, macro- and climate econometrics 
 - [Website](https://stephansmeekes.com)
 :::
 
@@ -100,7 +100,7 @@ All are econometricians at the Department of Quantitative Economics, and have ma
 
 ::: {.column width="60%"}
 - Associate Professor at QE
-- Research interests: econometrics, time series, high-dimensional statisics, forecasting,  outlier robustness
+- Research interests: econometrics, time series, high-dimensional statistics, forecasting,  outlier robustness
 - [Website](https://sites.google.com/view/iwilms)
 :::
 

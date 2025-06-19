@@ -38,7 +38,7 @@ No datasets used
 
 
 #### Session 5
-To follow
+- [grades.csv](data/grades.csv)
 
 ### Solutions
 Here we post solutions to the exercises in the sessions. The files are eventually kept very basic, only having the necessary code. The files, therefore, have very little meaning on their own, but might be useful to consult during the sessions.
@@ -56,4 +56,4 @@ Here we post solutions to the exercises in the sessions. The files are eventuall
 - [Solutions Session 4](solutions/S4.R)
 
 #### Session 5
-To follow
+- [Solutions Session 5](solutions/S5.R)
