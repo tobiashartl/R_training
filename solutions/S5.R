@@ -15,8 +15,9 @@ data_grades$Tutor <- as.factor(data_grades$Tutor)
 levels(data_grades$Tutor)
 
 data_grades$Final_Score <- 0.2*data_grades$Participation_Grade + 0.08*data_grades$Exam_Score
-#or
-data_grades$Final_Score <- 0.2*data_grades$Participation_Grade + 0.8*data_grades$Exam_Score_10
+# Alternative, once you added the variable Exam_Score_10 to your data set: 
+# data_grades$Exam_Score_10 <- data_grades$Exam_Score/10
+# data_grades$Final_Score <- 0.2*data_grades$Participation_Grade + 0.8*data_grades$Exam_Score_10
 
 data_2 <- data_grades[data_grades$Tutorial==2, ]
 summary(data_2$Final_Score)
@@ -28,7 +29,12 @@ max(data_2$Final_Score)
 my_reg1 <- lm(Final_Score ~ Participation_Grade, data = data_grades)
 summary(my_reg1)
 
-my_reg2 <- lm(Final_Score ~ Participation_Grade + Tutor, data = data_grades)
+plot(x = data_grades$Participation_Grade, y = data_grades$Final_Score,
+     xlab = 'Participation Grade', ylab = 'Final Score')
+abline(my_reg1)
+
+# Make sure you correctly set Tutor to be a factor in Exercise 5.2!
+my_reg2 <- lm(Final_Score ~ Participation_Grade + Tutor, data = data_grades) 
 summary(my_reg2)
 
 data_grades$Tutor <- relevel(data_grades$Tutor, ref = 'Chang, Steven')

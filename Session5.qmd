@@ -130,13 +130,13 @@ Use the grades data set.
 
 1. Generate a data set that contains information about the student ID, student name,  their tutorial group, participation grade and their exam score.
 
-2. Reduce the data set to only display information of students in tutorial group 4
+2. Further reduce the data set obtained under 1 to only display information of students in tutorial group 4.
 
-3. Further reduce the data set to only display information of students in tutorial group 4 with an exam score of more than 80. How many such students are there? 
-Hint: You can use a logical operator when subsetting!
+3. Further reduce the data set obtained under 2 to only display information of students with an exam score of more than 80. How many such students are there? 
+
 
 ## Transforming Variables 
-Let us continue with further data manipulations. The variable tutorial is currently an integer:
+Let us continue with further data manipulations. The variable `Tutorial` is currently an integer:
 ```{r list8, eval = TRUE}
 class(data_grades$Tutorial)
 ```
@@ -177,7 +177,7 @@ head(data_grades[, c("Exam_Score", "Exam_Score_10")], 3)
 
 3. Retrieve the final score of the students in tutorial group 2. Obtain summary statistics of their final scores.
 
-4. What is the lowest and the highest score in tutorial group 2? Retrieve this information from the summary statistics as well as by using a dedicated function.
+4. What is the lowest and the highest final score in tutorial group 2? Retrieve this information from the summary statistics as well as by using a dedicated function.
 
 # Regression Analysis {#reg1}
 
@@ -256,7 +256,7 @@ reg_3 <- lm(log(Final_Score) ~ log(Participation_Grade), data = data_grades)
 ```
 
 ## lm and Variable Transformations
-What if you want to include square of a predictor? For example:
+What if you want to include the square of a predictor? For example:
 $$Final\_Score = \beta_0 + \beta_1 Participation\_Grade  + \beta_2 Participation\_Grade^2 + u$$
 You CANNOT use  `Final_Score ~ Participation_Grade + Participation_Grade^2` since the `^2` has a special (different) meaning in a formula object. 
 
@@ -319,7 +319,10 @@ summary(reg_6)
 
 1. Estimate the following simple regression model in R: 
 $$Final\_Score = \beta_0 + \beta_1 Participation\_Grade + u$$
-Is the variable `Participation_Grade` significant? What is the value of the $R^2$?
+Save your regression model in the object `my_reg1`, and inspect the regression output. 
+
+2. Make a scatterplot of `Final_Score` (y-axis) against `Participation_Grade` (x-axis). 
+Verify that adding the line of code `abline(my_reg1)` after you created your scatter plot, adds the regression line to your scatterplot!
 
 3. Estimate the multiple regression model: 
 $$Final\_Score = \beta_0 + \beta_1 Participation\_Grade +
