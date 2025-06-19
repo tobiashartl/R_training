@@ -1,5 +1,5 @@
 # Load the data
-data_grades <- read.table("grades.csv", 
+data_grades <- read.table("data/grades.csv", 
 													header = TRUE, sep = ",", stringsAsFactors = FALSE)
 
 # Exercise 5.1
