@@ -22,6 +22,7 @@ diagram:
 1.  [Basics of Data Manipulation](#dataman1)
 2.  [Regression Analysis](#reg1)
 3.	[Bonus: Tidyverse](#dataman2)
+4.	[Concluding Remarks](#conclude)
 
 ## Today 
 
@@ -319,7 +320,7 @@ summary(reg_6)
 
 1. Estimate the following simple regression model in R: 
 $$Final\_Score = \beta_0 + \beta_1 Participation\_Grade + u$$
-Save your regression model in the object `my_reg1`, and inspect the regression output. 
+Save your regression model in the object `my_reg1`, and inspect the summary output. 
 
 2. Make a scatterplot of `Final_Score` (y-axis) against `Participation_Grade` (x-axis). 
 Verify that adding the line of code `abline(my_reg1)` after you created your scatter plot, adds the regression line to your scatterplot!
@@ -332,10 +333,10 @@ where `Chang` is a dummy variable taking the value 1 for students having tutor "
 4. Imagine you want to include the tutor "Chang, Stevens" as the baseline level. 
 Re-estimate the regression model after you have re-specified your factor variable `Tutor` thereby explicitly defining  "Chang, Stevens"  as the baseline level. Hint: use the function `relevel` to this end.
 
-5. Finally, estimate the regression model:
+5. Finally, estimate the following regression model and inspect the summary output:
 $$Final\_Score = \beta_0 + \beta_1 Participation\_Grade +
-\beta_2 Chang + \beta_3 Participation\_Grade \cdot Chang + u$$
-and inspect the summary output.
+\beta_2 Chang + \beta_3 Participation\_Grade \cdot Chang + u.$$
+
 
 
 ## Accessing Regression Results
@@ -463,3 +464,20 @@ Some key functions of `dplyr` are:
 - [`filter()`](https://dplyr.tidyverse.org/reference/filter.html): Select observations (rows)
 
 You can revisit some of the earlier exercises and now try to execute them using `dplyr`!
+
+# Concluding Remarks {#conclude}
+
+## Concluding Remarks
+
+Additional resources:
+
+-   Wickham, H.,  Çetinkaya-Rundel, M. and  Grolemund, G. (2023), [R for Data Science (2e)](https://r4ds.hadley.nz/)
+
+- Heiss, F. (2020) [Using R for Introductory Econometrics (2e)](https://www.urfie.net/)
+
+-  Hanck, C.,  Arnold, M.,   Gerber, A., and  Schmelzer, M. (2024) [Introduction to Econometrics with R](https://www.econometrics-with-r.org/)
+
+Many more resources are available online.
+
+Finally, thank you for attending the R training! We are happy to receive your feedback on this training through the following [survey](https://maastrichtuniversity.eu.qualtrics.com/jfe/form/SV_bf1HzbJMvvBzPaS).
+

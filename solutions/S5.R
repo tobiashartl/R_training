@@ -8,6 +8,8 @@ data_sub_4 <- data_sub[data_sub$Tutorial == 4, ]
 data_sub_4_exam <- data_sub_4[data_sub_4$Exam_Score > 80, ]
 nrow(data_sub_4_exam)
 data_sub_4_exam
+# Alternatively in one go:
+# data_sub[(data_sub$Tutorial == 4) & (data_sub$Exam_Score > 80), ]
 
 # Exercise 5.2
 class(data_grades$Tutor)
