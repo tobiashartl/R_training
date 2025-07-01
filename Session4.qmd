@@ -296,6 +296,7 @@ plot(ols_result)
 <!-- See solution file -->
 
 ## Creating and saving a graph
+- To run this code, create a folder 'figures'.
 
 ```{r, eval=FALSE}
 load("data/climate_wide.Rdata")

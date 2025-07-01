@@ -36,11 +36,8 @@ write_xlsx(wide_data, "climate_wide.xlsx")
 
 # Save dataset as dta file
 library(haven)
-save(wide_data, file = "climate_wide.dta")
+write_dta(wide_data, path = "climate_wide.dta")
 
 # Save dataset as Rdata file
 save(long_data, file = "climate_long.Rdata")
 save(wide_data, file = "climate_wide.Rdata")
-
-
-# Check if saved datasets can be retreived back
