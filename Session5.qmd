@@ -24,42 +24,42 @@ diagram:
 3.	[Bonus: Tidyverse](#dataman2)
 4.	[Concluding Remarks](#conclude)
 
-## Today 
+<!-- ## Today  -->
 
-#### Nalan Bastürk
+<!-- #### Nalan Bastürk -->
 
-:::: {.columns}
+<!-- :::: {.columns} -->
 
-::: {.column width="40%"}
-![](figures/nalan.jpg){width=50%}
-:::
+<!-- ::: {.column width="40%"} -->
+<!-- ![](figures/nalan.jpg){width=50%} -->
+<!-- ::: -->
 
-::: {.column width="60%"}
-- Associate Professor at QE
-- Research interests: econometrics, Bayesian statistics, financial econometrics
-- [Website](https://www.maastrichtuniversity.nl/n-bast%C3%BCrk)
-- Sessions 4 and 5
-:::
+<!-- ::: {.column width="60%"} -->
+<!-- - Associate Professor at QE -->
+<!-- - Research interests: econometrics, Bayesian statistics, financial econometrics -->
+<!-- - [Website](https://www.maastrichtuniversity.nl/n-bast%C3%BCrk) -->
+<!-- - Sessions 4 and 5 -->
+<!-- ::: -->
 
-::::
+<!-- :::: -->
 
-#### Ines Wilms
+<!-- #### Ines Wilms -->
 
-:::: {.columns}
+<!-- :::: {.columns} -->
 
-::: {.column width="40%"}
-![](figures/ines.jpg){width=50%}
+<!-- ::: {.column width="40%"} -->
+<!-- ![](figures/ines.jpg){width=50%} -->
 
-:::
+<!-- ::: -->
 
-::: {.column width="60%"}
-- Associate Professor at QE
-- Research interests: econometrics, time series, high-dimensional statistics, forecasting,  outlier robustness
-- [Website](https://sites.google.com/view/iwilms)
-- Sessions 1, 3 and 5
-:::
+<!-- ::: {.column width="60%"} -->
+<!-- - Associate Professor at QE -->
+<!-- - Research interests: econometrics, time series, high-dimensional statistics, forecasting,  outlier robustness -->
+<!-- - [Website](https://sites.google.com/view/iwilms) -->
+<!-- - Sessions 1, 3 and 5 -->
+<!-- ::: -->
 
-::::
+<!-- :::: -->
 
 
 # Basics of Data Manipulation {#dataman1}
@@ -479,5 +479,5 @@ Additional resources:
 
 Many more resources are available online.
 
-Finally, thank you for attending the R training! We are happy to receive your feedback on this training through the following [survey](https://maastrichtuniversity.eu.qualtrics.com/jfe/form/SV_bf1HzbJMvvBzPaS).
+<!-- Finally, thank you for attending the R training! We are happy to receive your feedback on this training through the following [survey](https://maastrichtuniversity.eu.qualtrics.com/jfe/form/SV_bf1HzbJMvvBzPaS). -->
 

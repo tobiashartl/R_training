@@ -26,43 +26,43 @@ diagram:
 4.	[Lists](#lists)
 5.	[Data frames](#dataframes)
 
-## R Training Team Today
+<!-- ## R Training Team Today -->
 
-#### Martin Schumann
+<!-- #### Martin Schumann -->
 
-:::: {.columns}
+<!-- :::: {.columns} -->
 
-::: {.column width="40%"}
-![](figures/martin.jpg){width=50%}
-:::
+<!-- ::: {.column width="40%"} -->
+<!-- ![](figures/martin.jpg){width=50%} -->
+<!-- ::: -->
 
-::: {.column width="60%"}
+<!-- ::: {.column width="60%"} -->
 
-- Assistant Professor at QE
-- Research interests: panel data, nonlinear models, difference-in-differences, network data, innovation
-- [Website](https://sites.google.com/site/martinschumannecon/home)
-- Sessions 1 and 2
-:::
+<!-- - Assistant Professor at QE -->
+<!-- - Research interests: panel data, nonlinear models, difference-in-differences, network data, innovation -->
+<!-- - [Website](https://sites.google.com/site/martinschumannecon/home) -->
+<!-- - Sessions 1 and 2 -->
+<!-- ::: -->
 
-::::
+<!-- :::: -->
 
-#### Stephan Smeekes
+<!-- #### Stephan Smeekes -->
 
-:::: {.columns}
+<!-- :::: {.columns} -->
 
-::: {.column width="40%"}
-![](figures/stephan.jpg){width=50%}
+<!-- ::: {.column width="40%"} -->
+<!-- ![](figures/stephan.jpg){width=50%} -->
 
-:::
+<!-- ::: -->
 
-::: {.column width="60%"}
-- Professor of Econometrics at QE
-- Research interests: econometrics, time series, high-dimensional statistics, bootstrap, macro- and climate econometrics 
-- [Website](https://stephansmeekes.com)
-- Sessions 2, 3 and 4
-:::
+<!-- ::: {.column width="60%"} -->
+<!-- - Professor of Econometrics at QE -->
+<!-- - Research interests: econometrics, time series, high-dimensional statistics, bootstrap, macro- and climate econometrics  -->
+<!-- - [Website](https://stephansmeekes.com) -->
+<!-- - Sessions 2, 3 and 4 -->
+<!-- ::: -->
 
-::::
+<!-- :::: -->
 
 # Objects {#objects}
 

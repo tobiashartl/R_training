@@ -23,43 +23,43 @@ diagram:
 2.	[Graphics](#graphics)
 3.  [Bonus: Advanced Graphics with ggplot](#ggplot)
 
-## Today 
+<!-- ## Today  -->
 
-#### Nalan Bastürk
+<!-- #### Nalan Bastürk -->
 
-:::: {.columns}
+<!-- :::: {.columns} -->
 
-::: {.column width="40%"}
-![](figures/nalan.jpg){width=50%}
+<!-- ::: {.column width="40%"} -->
+<!-- ![](figures/nalan.jpg){width=50%} -->
 
-:::
+<!-- ::: -->
 
-::: {.column width="60%"}
-- Associate Professor at QE
-- Research interests: econometrics, Bayesian statistics, financial econometrics
-- [Website](https://www.maastrichtuniversity.nl/n-bast%C3%BCrk)
-- Sessions 4 and 5
-:::
+<!-- ::: {.column width="60%"} -->
+<!-- - Associate Professor at QE -->
+<!-- - Research interests: econometrics, Bayesian statistics, financial econometrics -->
+<!-- - [Website](https://www.maastrichtuniversity.nl/n-bast%C3%BCrk) -->
+<!-- - Sessions 4 and 5 -->
+<!-- ::: -->
 
-::::
+<!-- :::: -->
 
-#### Stephan Smeekes
+<!-- #### Stephan Smeekes -->
 
-:::: {.columns}
+<!-- :::: {.columns} -->
 
-::: {.column width="40%"}
-![](figures/stephan.jpg){width=50%}
+<!-- ::: {.column width="40%"} -->
+<!-- ![](figures/stephan.jpg){width=50%} -->
 
-:::
+<!-- ::: -->
 
-::: {.column width="60%"}
-- Professor of Econometrics at QE
-- Research interests: econometrics, time series, high-dimensional statistics, bootstrap, macro- and climate econometrics 
-- [Website](https://stephansmeekes.com)
-- Sessions 2, 3 and 4
-:::
+<!-- ::: {.column width="60%"} -->
+<!-- - Professor of Econometrics at QE -->
+<!-- - Research interests: econometrics, time series, high-dimensional statistics, bootstrap, macro- and climate econometrics  -->
+<!-- - [Website](https://stephansmeekes.com) -->
+<!-- - Sessions 2, 3 and 4 -->
+<!-- ::: -->
 
-::::
+<!-- :::: -->
 
 ## Inputs and outputs of your R session
   - Common inputs / outputs of an R session are datasets or R scripts.
