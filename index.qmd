@@ -12,7 +12,7 @@ license: "Nothing in this publication may be reproduced and/or made public by me
 Welcome to the homepage of the SBE R training! Here you will find the slides for the sessions, and any additional files needed (such as datasets). You can also find some information about the team organising the training as well as the purpose of the training.
 
 ### Sessions
-- [Installation](Session0.qmd){target="_blank"}
+- [Installation Session](Session0.qmd){target="_blank"}
 - [Session 1](Session1.qmd){target="_blank"}
 - [Session 2](Session2.qmd){target="_blank"}
 - [Session 3](Session3.qmd){target="_blank"}
