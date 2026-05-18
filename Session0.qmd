@@ -1,0 +1,142 @@
+---
+title: "Introduction to R"
+subtitle: "Installation Session"
+author: ""
+filters:
+  - diagram
+diagram:
+  engine:
+    tikz:
+      header-includes:
+        - '\usepackage{adjustbox,xcolor}'
+        - '\usetikzlibrary{arrows, shapes}'
+        - '\definecolor{UMdblue}{RGB}{0,28,61}'
+        - '\definecolor{UMlblue}{RGB}{0,162,219}'
+        - '\definecolor{UMorangered}{RGB}{232,78,16}'
+        - '\definecolor{UMorange}{RGB}{243,148,37}'
+        - '\definecolor{UMred}{RGB}{174,11,18}'
+---
+
+# Session Overview
+
+<!-- 1.  [SBE R Training](#R-team) -->
+1.  [What is R?](#what-is-R)
+2.  [Installing R](#install-R)
+3.  [What is RStudio?](#what-is-RStudio)
+4.  [Installing RStudio](#install-RStudio)
+
+
+# What is R? {#what-is-R}
+
+## What is R?
+
+**R** 
+
+- is an open-source statistical programming language. 
+- available for most operating systems
+- helps users analyze, visualize, and model data—from simple summaries to complex data analysis
+- is extremely popular in statistics and data science, see [this article](http://r4stats.com/articles/popularity/)
+- includes thousands of packages (add-ons) that can be used for 
+specialized tasks without a deep understanding of the language and programming skills
+- allows for extensive programming, making it also suitable for advanced or case-specific applications of statistical methods
+
+The combination of the latter two aspects sets **R** apart and makes it useful for everything ranging from standard 'basic' statistical analysis to the development of new methods.
+
+The homepage of **R** is [www.r-project.org](www.r-project.org) from which you can install **R** and access manuals that provide detailed information about installing and using **R**.
+
+
+# Installing R {#install-R}
+
+## R Installation
+To install **R**, go to the Comprehensive R Archive Network [CRAN](https://cran.r-project.org/). At the time of writing, it looks as follows:
+
+![](figures/website-R-1.png)
+
+
+## R Installation on Windows
+To download, for instance, **R** for Windows, you arrive at the following page:
+
+![](figures/website-R-2.png)
+
+## R Installation on Windows
+Now download the latest version of **R** (version 4.6.0 at the time of writing):
+
+![](figures/website-R-4.png)
+
+## R Installation on Windows
+Start the download process:
+
+![](figures/download-R-1.png)
+
+## R Installation on Windows
+Continue the download process:
+
+![](figures/download-R-2.png)
+
+## R Installation on Windows
+Download completed:
+
+![](figures/download-R-3.png)
+
+## R Installation on Mac
+
+Choose the right version for your Mac:
+
+![](figures/RprojMac)
+
+## R Installation on Mac
+
+Download the installation file and open it:
+
+![](figures/RinstallMac1)
+
+## R Installation on Mac
+
+Simply click continue everywhere, the default installation is fine.
+
+- When asked, enter your password and accept the license agreement.
+
+![](figures/RinstallMac2)
+
+
+# What is RStudio? {#what-is-RStudio}
+
+## What is RStudio?
+
+**RStudio**
+
+- is an Integrated Development Environment (IDE) for **R**
+
+- is a user-friendly interface for writing and running **R** code
+
+- makes it easier to write code, analyze data, create visuals, access documentation and manage projects
+
+Its homepage is [https://posit.co/download/rstudio-desktop/](https://posit.co/download/rstudio-desktop/)
+
+# Installing RStudio {#install-RStudio}
+
+## RStudio Installation on Windows
+
+To download **RStudio**, go to its [download](https://posit.co/download/rstudio-desktop/) page. At the time of writing, it looks as follows:
+
+![](figures/website-RStudio-1.png)
+
+## RStudio Installation on Windows
+Start the download process:
+
+![](figures/download-RStudio-1.png)
+
+## RStudio Installation on Mac
+If you open the (same) [download](https://posit.co/download/rstudio-desktop/) page on Mac, you directly see the download button for Mac:
+
+![](figures/RStudioMac1.png)
+
+## RStudio Installation on Mac
+Open the downloaded RStudio dmg file, and drag the RStudio icon into the applications folder:
+
+![](figures/RStudioMac2.png)
+
+
+
+
+
