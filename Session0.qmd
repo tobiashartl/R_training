@@ -61,7 +61,7 @@ To download, for instance, **R** for Windows, you arrive at the following page:
 ## R Installation on Windows
 Now download the latest version of **R** (version 4.6.0 at the time of writing):
 
-![](figures/website-R-4.png)
+![](figures/website-R-4.jpg)
 
 ## R Installation on Windows
 Start the download process:
