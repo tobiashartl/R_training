@@ -24,19 +24,19 @@ We have scheduled 5 hands-on sessions of 2 hours each. The sessions are interact
 
 #### Content
 
-1. **Tuesday June 10, 13:30-15:30: Installing R**</br>
-The first session will discuss how to get R up and running. We will cover the actual installation of R and RStudio on different operating systems. Next, we will cover the basics to get R working, specifically, how to use the console and writing scripts.
+1. **Tuesday June 9, 13:30-15:30: First Steps in R**</br>
+The first session will discuss how to get R and RStudio up and running.  Next, we will cover the basics to get R working, specifically, how to use the console, write scripts and how to load data into R from different types of sources. 
 
-2. **Thursday June 12, 13:30-15:30: R Objects**</br>
+2. **Thursday June 11, 13:30-15:30: R Objects**</br>
 Using different types of objects is at the heart of R. This session will go into the different type of objects that users encounter, such as vectors, lists and data frames. 
 
-3. **Monday June 16, 13:30-15:30: Using Functions and Packages**</br>
+3. **Monday June 15, 13:30-15:30: Using Functions and Packages**</br>
 When using R as a statistical tool rather than a programming language, proper use of built-in functions and packages is key. This session will cover how to use general functions, explain the way arguments should be entered, and how output objects should be interpreted. We discuss the philosophy of R’s object-oriented system, and show how operations can be performed on different type of objects. We also go into the package management system.
 
-4. **Wednesday June 18, 10:30-12:30: Input, Output and Graphics**</br>
-In the session, we will focus on how to load data into R from different types of sources. We also discuss how to export results from an analysis from R to other programs. Finally, we cover how to make professional figures and plots using R’s graphical capabilities.
+4. **Wednesday June 17, 10:30-12:30: Graphics**</br>
+In the session, we cover how to make professional figures and plots using R’s graphical capabilities. To this end, we will frequently revisit how to load data into R from different types of sources and how to export results from an analysis from R to other programs. 
 
-5. **Friday June 20, 10:30-12:30: Data Manipulation and (Regression) Analysis**</br>
+5. **Friday June 19, 10:30-12:30: Data Manipulation and (Regression) Analysis**</br>
 The first part of the session will focus on typical manipulations of data stats that may be needed as preprocessing steps before a statistical analysis. The second part of the session we will apply some basic statistical analysis tools. We focus on the linear regression model, the workhorse of empirical economic research. To enable practitioners to efficiently estimate the linear regression model in R, we cover objects of class formula and OLS estimation via the lm() command.
 
 #### Optional Topics
@@ -50,7 +50,7 @@ Depending on the progress and interests of the participants, we have 2 optional 
 
 #### First Meeting
 
-No preparation is needed; all that we ask is that participants bring a laptop on which they can install and use R. There is no need to install things in advance, we will guide you through installation during the first session.
+Participants are asked to install R and RStudio prior to the first session but we can still cover installation if problems occur. Do bring your laptop to each session. Preparation for the remaining sessions is not needed.
 
 #### Missed Meetings
 
