@@ -21,13 +21,12 @@ diagram:
 
 <!-- 1.  [SBE R Training](#R-team) -->
 1.  [What is R?](#what-is-R)
-2.  [Installing R](#install-R)
-3.	[First Steps in R](#open-R)
-4.  [What is RStudio?](#what-is-RStudio)
-5.  [Installing RStudio](#install-RStudio)
-6.	[First Steps in RStudio](#open-Rstudio)
-7.	[R Script](#R-script)
-8.	[R Package Management System](#R-packages)
+2.	[First Steps in R](#open-R)
+3.  [What is RStudio?](#what-is-RStudio)
+4.	[First Steps in RStudio](#open-Rstudio)
+5.	[R Script](#R-script)
+6.	[R Package Management System](#R-packages)
+7.  [Inputs and Outputs](#io)
 
 <!-- # R Training Team {#R-team} -->
 
@@ -128,61 +127,6 @@ The combination of the latter two aspects sets **R** apart and makes it useful f
 
 The homepage of **R** is [www.r-project.org](www.r-project.org) from which you can install **R** and access manuals that provide detailed information about installing and using **R**.
 
-
-# Installing R {#install-R}
-
-## R Installation
-To install **R**, go to the Comprehensive R Archive Network [CRAN](https://cran.r-project.org/). At the time of writing, it looks as follows:
-
-![](figures/website-R-1.png)
-
-
-## R Installation on Windows
-To download, for instance, **R** for Windows, you arrive at the following page:
-
-![](figures/website-R-2.png)
-
-## R Installation on Windows
-Now download the latest version of **R** (version 4.5.0 at the time of writing):
-
-![](figures/website-R-3.png)
-
-## R Installation on Windows
-Start the download process:
-
-![](figures/download-R-1.png)
-
-## R Installation on Windows
-Continue the download process:
-
-![](figures/download-R-2.png)
-
-## R Installation on Windows
-Download completed:
-
-![](figures/download-R-3.png)
-
-## R Installation on Mac
-
-Choose the right version for your Mac:
-
-![](figures/RprojMac)
-
-## R Installation on Mac
-
-Download the installation file and open it:
-
-![](figures/RinstallMac1)
-
-## R Installation on Mac
-
-Simply click continue everywhere, the default installation is fine.
-
-- When asked, enter your password and accept the license agreement.
-
-![](figures/RinstallMac2)
-
-
 # First Steps in R {#open-R}
 
 ## Opening R
@@ -269,29 +213,6 @@ There are various user interfaces that work on top of plain **R** to make it mor
 - makes it easier to write code, analyze data, create visuals, access documentation and manage projects
 
 Its homepage is [https://posit.co/download/rstudio-desktop/](https://posit.co/download/rstudio-desktop/)
-
-# Installing RStudio {#install-RStudio}
-
-## RStudio Installation on Windows
-
-To download **RStudio**, go to its [download](https://posit.co/download/rstudio-desktop/) page. At the time of writing, it looks as follows:
-
-![](figures/website-RStudio-1.png)
-
-## RStudio Installation on Windows
-Start the download process:
-
-![](figures/download-RStudio-1.png)
-
-## RStudio Installation on Mac
-If you open the (same) [download](https://posit.co/download/rstudio-desktop/) page on Mac, you directly see the download button for Mac:
-
-![](figures/RStudioMac1.png)
-
-## RStudio Installation on Mac
-Open the downloaded RStudio dmg file, and drag the RStudio icon into the applications folder:
-
-![](figures/RStudioMac2.png)
 
 
 # First Steps in RStudio {#open-RStudio}
@@ -420,37 +341,11 @@ Give your R Script a name and save it. Go to *File* -> *Save As...*:
 
 ![](figures/R-script-4.png)
 
-## R Working Directory
-
-Before we start working in our R Script, let us first set the working directory in **R**.
-
-The working directory is the location on your computer where **R** will read and save files. Go to *Session* -> *Set Working Directory*. Two convenient options are:  
-
-- *Choose Directory...*: Choose the directory yourself
-
-- *To Source File Location*: Set the working directory to the directory where your **R** Script (the source file) is saved
-
-![](figures/R-script-5.png)
 
 
 
-## R Working Directory
-
-Select the option to set the working directory to the source file location. You will see that a command automatically pops up in the R console, something like:
-
-```{r, eval=FALSE}
-setwd("C:/Rtraining")
-```
-
-You can use this command directly next time. Mind the usage of the  */* when specifying the path of your working directory!
 
 
-You can also include comment lines in your **R** script. These start with the symbol *#* and allow you to document your code. For instance:
-
-```{r, eval=FALSE}
-# Setting my working directory
-setwd("C:/Rtraining")
-```
 
 
 ## Exercise 1.5
@@ -504,7 +399,178 @@ A list of the currently installed packages can be obtained from the *Packages* w
 
 ![](figures/R-package-1.png)
 
-You can install new packages depending on your needs. We will explore R packages in the upcoming sessions!
+You can install new packages depending on your needs. We will explore R packages in much more detail in the upcoming sessions!
+
+
+# Input and Output {#io}
+
+## Inputs and outputs of your R session
+  - Common inputs / outputs of an **R** session are datasets or **R** scripts.
+  - For this meeting we focus on datasets as inputs to the **R** session, loading data and saving data.
+  - The file format (csv, RData, xls, stata ...) and directory of the files are important to keep in mind.
+  - We will go over a few options, potential issues, and how to avoid the need to type in a long directory name when managing the input and output of the **R** session.
+  
+## R Working Directory
+
+Before we start working in our R Script, let us first set the working directory in **R**.
+
+The working directory is the location on your computer where **R** will read and save files. Go to *Session* -> *Set Working Directory*. Two convenient options are:  
+
+- *Choose Directory...*: Choose the directory yourself
+
+- *To Source File Location*: Set the working directory to the directory where your **R** Script (the source file) is saved
+
+![](figures/R-script-5.png)
+
+
+## R Working Directory
+
+Select the option to set the working directory to the source file location. You will see that a command automatically pops up in the R console, something like:
+
+```{r, eval=FALSE}
+setwd("C:/Rtraining")
+```
+
+You can use this command directly next time. Mind the usage of the  */* when specifying the path of your working directory!
+
+
+You can also include comment lines in your **R** script. These start with the symbol *#* and allow you to document your code. For instance:
+
+```{r, eval=FALSE}
+# Setting my working directory
+setwd("C:/Rtraining")
+```
+
+Finally, to retrieve your working directory you can use
+```{r, eval=FALSE}
+  getwd()
+```
+
+
+## R Working Directory
+
+A very useful package to set your working directory in **R** is the package `this.path`. Install this **R** package.
+
+To set the working directory to the folder where your current R script is located, you can simply use:
+```{r, eval=FALSE}
+library(this.path)
+setwd(here())
+```
+
+## Input and Output Types
+**R** interacts with files in several ways.
+
+  - You can load, save, import, or export a data file. 
+  - You can save a generated figure as a graphics file or store regression tables as text, spreadsheet, or LATEX tables.
+  - You can load, save the full workspace (environment) you are working with to follow up another time.
+  
+  Datasets can come in different formats.
+  
+  - RData files: Files that can directly 
+  - Other file formats (SPSS csv, xls, ...) are also possible to load in **R**. This often requires the use of packages
+
+## Loading RData files
+  - RData files are specific to **R** file formats. 
+  - They can store a single object or several objects. 
+  - These files are the easiest to manage as input or output in **R**, since they don't require library calls.
+
+
+## Loading RData files: Example
+
+Download the data file  climate_long.RData from the training website. Create a directory 'data' in your working directory. Save the Rdata file in this data directory. 
+
+You can now use the following lines of code to load your data and inspect it: 
+```{r}
+load("data/climate_long.Rdata")
+print(long_data)
+```
+The data is loaded as a dataframe (in long format), we will learn more about dataframes and formats in the next sessions.
+
+## Loading Other Formats of Data in R
+We will explore how to import other data formats. First download the file climate_wide.xlsx from the training website.
+
+Option 1: Using menus within RStudio is the easiest (click and go) but requires using the menu every time the user runs the code.
+  
+![](figures/load1.png)  
+
+## Loading Other Formats of Data in R
+Option 1: Using menus within RStudio (cont'd)
+  
+![](figures/load2.png) 
+
+
+## Loading Other Formats of Data in R
+Option 1: Using menus within RStudio (cont'd)
+  
+![](figures/load3.png) 
+
+
+## Loading Other Formats of Data in R
+Option 1: Using menus within RStudio (cont'd)
+![](figures/load4.png)  
+
+## Loading Other Formats of Data in R
+
+Advice for option 1: 
+
+  - Copy the command that appears after loading the data from the menus. 
+
+![](figures/load5.png) 
+
+## Loading Other Formats of Data in R
+
+Advice for option 1 (cont'd): 
+
+  - Paste the command on top of your script.
+  - This way, next time you do not need the menu navigation.
+  - Note that you need to install the package `readxl` to use its functionality.
+
+```{r}
+library(readxl)
+climate <- read_excel("data/climate_wide.xlsx")
+```
+  - You can view the data by clicking on it in the `Environment' at the top-right of the workspace. 
+  
+## General Advice
+
+  - Using the correct libraries for different data formats can be tedious.
+  - **R** package `rio` is very convenient for data import and export. It figures out the type of data format from the file name extension, e.g. *.csv for CSV, *.dta for Stata, or *.sav for SPSS data sets
+  - It calls an appropriate package to do the actual importing or exporting. 
+  
+## Exercise 1.7
+
+Download the file climate_wide.dta from the training website. Save it in your data folder. Install the **R** package rio. Use the import function from the package rio to import the climate_wide.dta file. Inspect the data.
+
+Download the file climate.csv from the training website. Save it in your data folder. Use the import function from the package `rio` to import the climate.csv file. Inspect the data.
+
+## Loading data from APIs
+ - It is possible to automatically load data from a web source using APIs.
+ - An API (Application Programming Interface) acts as a bridge between your **R** code and an external data source: a website, database, or an online platform with permissions.
+ - Advantages: Automation, efficiency and real-time access.
+ - Disadvantages: No offline access to data (can be important for replication), dependency on external services (API can go down).
+ - Suggestion: Save the downloaded data in RData format to mitigate disadvantages.
+
+## Loading data from APIs: Example
+- As an example we will download AAPL daily prices from Yahoo Finance.
+- Inspect the data
+```{r, eval=FALSE}
+library(quantmod)
+# Get Apple Inc. (AAPL) stock data from Yahoo Finance
+getSymbols("AAPL", src = "yahoo", from = "2024-01-01", to = "2025-06-13")
+# View the data
+View(AAPL)
+```
+## Outputs
+
+- Outputs work very similarly to the inputs above.
+- The most relevant outputs formats are the **R** output formats.
+- `save()` saves objects as an `.RData` file.
+- `save.image()` saves a selection of objects as an `.RData` file.
+
+## Exercise 1.8: Saving data
+
+- Save your current workspace using function `save.image()`.
+- Save only one variable in the workspace using function `save()`. Save the AAPL data in your directory data.
 
 
 
